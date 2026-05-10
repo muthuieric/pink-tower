@@ -6,7 +6,14 @@
   --navy: #1A1A40;
   --yellow: #FFD700;
   --purple: #4A2C82;
-  --font-geist-sans: Arial, Helvetica, sans-serif;
+  --grape: #4A2C82;
+  --cream: #FFF8E8;
+  --sun: #FFD700;
+  --card: #ffffff;
+  --input: #E6E1EF;
+  --destructive: #B42318;
+  --font-quicksand: "Quicksand", Arial, Helvetica, sans-serif;
+  --font-poppins: "Poppins", Arial, Helvetica, sans-serif;
   --font-geist-mono: "Courier New", Courier, monospace;
 }
 
@@ -16,11 +23,50 @@
   --color-navy: var(--navy);
   --color-yellow: var(--yellow);
   --color-purple: var(--purple);
-  --font-sans: var(--font-geist-sans);
+  --color-primary: var(--navy);
+  --color-grape: var(--grape);
+  --color-cream: var(--cream);
+  --color-sun: var(--sun);
+  --color-card: var(--card);
+  --color-input: var(--input);
+  --color-destructive: var(--destructive);
+  --color-muted-foreground: #5f6077;
+  --font-sans: var(--font-quicksand);
+  --font-heading: var(--font-poppins);
+  --font-display: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
+  font-family: var(--font-quicksand);
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-poppins);
+}
+
+.container-page {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--grape) 20%, transparent);
+  background: color-mix(in srgb, white 82%, transparent);
+  padding: 0.5rem 1rem;
+  color: var(--grape);
+  font-size: 0.875rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
