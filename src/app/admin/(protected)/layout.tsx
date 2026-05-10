@@ -9,10 +9,12 @@ export default async function ProtectedAdminLayout({ children }: { children: Rea
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50/50 flex">
       <Sidebar />
-      <div className="flex-1 ml-64 p-8">
-        <div className="max-w-6xl mx-auto">
+      <div className="flex-1 md:ml-72 w-full max-w-full">
+        {/* Mobile Header Spacer */}
+        <div className="md:hidden h-16" />
+        <div className="p-6 md:p-10 lg:p-12 max-w-6xl mx-auto">
           {children}
         </div>
       </div>
