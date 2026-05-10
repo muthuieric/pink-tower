@@ -156,7 +156,7 @@ export default function Home() {
           <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
             <span className="inline-flex items-center gap-2 rounded-full border-2 border-purple/10 bg-white px-5 py-2.5 text-sm font-extrabold uppercase tracking-widest text-purple shadow-sm">
               <Star className="h-4 w-4 fill-yellow text-yellow" />
-              Admissions Open - 2025
+              Admissions Open - 2026
             </span>
             <h1 className="mt-8 text-4xl font-heading font-extrabold tracking-tight text-navy sm:text-5xl md:text-6xl lg:text-7xl">
               Where curious minds become <span className="text-purple relative inline-block">
@@ -179,8 +179,8 @@ export default function Home() {
             
             <div className="mt-12 grid grid-cols-3 gap-6 text-sm font-medium text-slate-600">
               <div>
-                <div className="text-3xl font-heading font-black text-navy mb-1">2</div>
-                Campuses in Lavington
+                <div className="text-3xl font-heading font-black text-navy mb-1">1</div>
+                Campuse in Lavington
               </div>
               <div>
                 <div className="text-3xl font-heading font-black text-navy mb-1">15+</div>

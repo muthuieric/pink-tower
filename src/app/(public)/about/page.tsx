@@ -102,7 +102,7 @@ export default function About() {
             </h2>
             <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate-600">
               <p>
-                Inspired by Dr. Maria Montessori&apos;s pioneering work, we create calm, beautiful classrooms where
+                We create calm, beautiful classrooms where
                 children choose meaningful work, build deep concentration, and grow at a pace that respects who they
                 are.
               </p>
@@ -174,13 +174,14 @@ export default function About() {
               <span className="absolute -bottom-10 ml-2 text-6xl text-yellow/50">&quot;</span>
             </blockquote>
             <p className="mt-10 text-lg font-extrabold text-purple">
-              Mrs. Wanjiku Mwangi <span className="text-slate-300 font-normal mx-2">|</span> <span className="text-slate-500 font-medium">Founding Director</span>
+            Phyllis W. Mburu
+            <span className="text-slate-300 font-normal mx-2">|</span> <span className="text-slate-500 font-medium">Founding Director</span>
             </p>
           </div>
         </div>
       </section>
       
-      {/* CTA Section */}
+      CTA Section
       <section className="px-6 pb-20 md:px-12 md:pb-24">
          <div className="mx-auto max-w-5xl rounded-3xl bg-navy px-8 py-16 md:px-16 md:py-20 text-center shadow-2xl shadow-indigo-900/20 relative overflow-hidden">
             <div className="absolute top-0 right-0 h-64 w-64 bg-purple blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2 rounded-full" />
