@@ -180,7 +180,7 @@ export default function Home() {
             <div className="mt-12 grid grid-cols-3 gap-6 text-sm font-medium text-slate-600">
               <div>
                 <div className="text-3xl font-heading font-black text-navy mb-1">1</div>
-                Campuse in Lavington
+                Campus in Lavington
               </div>
               <div>
                 <div className="text-3xl font-heading font-black text-navy mb-1">15+</div>

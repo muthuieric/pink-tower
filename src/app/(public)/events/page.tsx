@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import prisma from "@/lib/prisma";
-import { CalendarDays, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, CalendarDays, MapPin, Sparkles } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -143,12 +144,16 @@ export default async function Events() {
                Never miss a moment.
             </h2>
             <p className="relative z-10 mt-6 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-               Stay updated on our community events, term dates, and special activities.
+               Stay updated on community events, term dates, and special activities through the admissions team.
             </p>
             <div className="relative z-10 mt-10">
-               <button className="rounded-full bg-white px-8 py-4 text-lg font-extrabold text-navy shadow-xl shadow-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/20 active:scale-95">
-                  View Full Calendar
-               </button>
+               <Link
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-extrabold text-navy shadow-xl shadow-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/20 active:scale-95"
+               >
+                  Ask About Term Dates
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+               </Link>
             </div>
          </div>
       </section>

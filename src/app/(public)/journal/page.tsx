@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import prisma from "@/lib/prisma";
-import { BookOpen, Music2, Paintbrush, Sparkles, Languages, type LucideIcon, ArrowRight } from "lucide-react";
+import { BookOpen, Music2, Paintbrush, Sparkles, Languages, type LucideIcon, ArrowRight, MessageCircle } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -227,20 +228,20 @@ export default async function Journal() {
             <div className="absolute top-0 right-0 h-64 w-64 bg-white/40 blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2 rounded-full" />
             
             <h2 className="relative z-10 text-3xl md:text-5xl font-heading font-extrabold tracking-tight text-navy">
-               Join our parent community
+               Want guidance for your child?
             </h2>
             <p className="relative z-10 mt-6 text-lg md:text-xl text-navy/80 max-w-2xl mx-auto leading-relaxed font-medium">
-               Get the latest articles, school updates, and Montessori tips sent directly to your inbox.
+               Talk to our admissions team about age groups, campus fit, and how Montessori works day to day.
             </p>
-            <div className="relative z-10 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-               <input 
-                  type="email" 
-                  placeholder="Email address" 
-                  className="w-full sm:w-80 rounded-full px-6 py-4 text-lg font-medium text-navy placeholder:text-navy/40 shadow-inner focus:outline-none focus:ring-4 focus:ring-navy/10 border-0"
-               />
-               <button className="w-full sm:w-auto rounded-full bg-navy px-8 py-4 text-lg font-extrabold text-white shadow-xl shadow-navy/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-navy/40 active:scale-95">
-                  Subscribe
-               </button>
+            <div className="relative z-10 mt-10">
+               <Link
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-navy px-8 py-4 text-lg font-extrabold text-white shadow-xl shadow-navy/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-navy/40 active:scale-95"
+               >
+                  <MessageCircle className="h-5 w-5 text-yellow" />
+                  Contact Admissions
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+               </Link>
             </div>
          </div>
       </section>

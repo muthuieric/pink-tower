@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, Sparkles, X } from "lucide-react";
 import { useState } from "react";
 
 const nav = [
@@ -27,19 +27,29 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/85 backdrop-blur">
-      <div className="container-page flex h-16 items-center justify-between md:h-20">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy text-sm font-extrabold text-yellow md:h-12 md:w-12 md:text-base">
+    <header className="sticky top-0 z-50 border-b border-purple/10 bg-cream/85 shadow-lg shadow-indigo-900/5 backdrop-blur-xl">
+      <div className="container-page flex h-20 items-center justify-between gap-4 md:h-24">
+        <Link
+          href="/"
+          className="group flex min-w-0 items-center gap-3"
+          onClick={() => setOpen(false)}
+          aria-label="Pink Tower International School home"
+        >
+          <span className="flex h-12 w-12 shrink-0 rotate-[-4deg] items-center justify-center rounded-2xl border-4 border-yellow bg-navy text-base font-extrabold text-yellow shadow-xl shadow-indigo-900/15 transition-all duration-300 group-hover:-translate-y-1 group-hover:rotate-0 md:h-14 md:w-14">
             PT
           </span>
-          <span className="font-display text-base font-extrabold leading-tight text-navy md:text-lg">
+          <span className="min-w-0 font-display text-lg font-extrabold leading-tight tracking-tight text-navy md:text-xl">
             Pink Tower
-            <span className="block text-[0.65rem] font-bold tracking-widest text-purple">INTERNATIONAL SCHOOL</span>
+            <span className="block truncate text-[0.62rem] font-extrabold tracking-widest text-purple md:text-xs">
+              INTERNATIONAL SCHOOL
+            </span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+        <nav
+          className="hidden items-center gap-1 rounded-full border border-purple/10 bg-white/85 p-1.5 shadow-xl shadow-indigo-900/5 lg:flex"
+          aria-label="Main navigation"
+        >
           {nav.map((item) => {
             const active = isActive(pathname, item.href);
 
@@ -47,8 +57,10 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-full px-3 py-2 text-sm transition-colors ${
-                  active ? "bg-yellow font-bold text-navy" : "font-semibold text-navy hover:bg-yellow/40"
+                className={`rounded-full px-3.5 py-2 text-sm font-extrabold transition-all duration-300 ${
+                  active
+                    ? "bg-yellow text-navy shadow-md shadow-yellow/30"
+                    : "text-navy/75 hover:-translate-y-0.5 hover:bg-purple/5 hover:text-navy"
                 }`}
               >
                 {item.label}
@@ -61,14 +73,16 @@ export function Navbar() {
           href={whatsappTourUrl}
           target="_blank"
           rel="noreferrer"
-          className="hidden rounded-lg bg-yellow px-5 py-2.5 text-sm font-bold text-navy transition hover:bg-yellow/85 lg:inline-flex"
+          className="group hidden items-center gap-2 rounded-full bg-navy px-5 py-3 text-sm font-extrabold text-white shadow-xl shadow-indigo-900/15 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-900/20 active:scale-95 lg:inline-flex"
         >
+          <Sparkles className="h-4 w-4 text-yellow" />
           Book a Tour
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </a>
 
         <button
           type="button"
-          className="rounded-full p-2 text-navy transition hover:bg-yellow/40 lg:hidden"
+          className="rounded-full border border-purple/10 bg-white p-3 text-navy shadow-lg shadow-indigo-900/10 transition-all duration-300 hover:-translate-y-1 hover:bg-yellow/40 active:scale-95 lg:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
           aria-label="Toggle menu"
@@ -78,8 +92,8 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-gray-200 bg-white lg:hidden">
-          <div className="container-page flex flex-col gap-1 py-3">
+        <div className="border-t border-purple/10 bg-cream/95 shadow-2xl shadow-indigo-900/10 backdrop-blur-xl lg:hidden">
+          <div className="container-page flex flex-col gap-2 py-4">
             {nav.map((item) => {
               const active = isActive(pathname, item.href);
 
@@ -88,8 +102,10 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className={`rounded-lg px-3 py-3 transition-colors ${
-                    active ? "bg-yellow font-bold text-navy" : "font-semibold text-navy hover:bg-yellow/40"
+                  className={`rounded-2xl px-4 py-3 text-base font-extrabold transition-all duration-300 ${
+                    active
+                      ? "bg-yellow text-navy shadow-md shadow-yellow/20"
+                      : "bg-white/75 text-navy/75 hover:bg-purple/5 hover:text-navy"
                   }`}
                 >
                   {item.label}
@@ -101,8 +117,9 @@ export function Navbar() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-lg bg-yellow px-5 py-3 text-center font-bold text-navy transition hover:bg-yellow/85"
+              className="mt-2 flex items-center justify-center gap-2 rounded-full bg-navy px-5 py-4 text-center font-extrabold text-white shadow-xl shadow-indigo-900/15 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-95"
             >
+              <Sparkles className="h-4 w-4 text-yellow" />
               Book a Tour
             </a>
           </div>

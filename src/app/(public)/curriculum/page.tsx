@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { CheckCircle2, Languages, Music2, Paintbrush, Sprout, Sparkles } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, CheckCircle2, Languages, Music2, Paintbrush, Sprout, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Curriculum - Pink Tower International School',
@@ -125,12 +126,16 @@ export default function Curriculum() {
                Discover the Montessori Difference
             </h2>
             <p className="relative z-10 mt-6 text-lg md:text-xl text-purple-100 max-w-2xl mx-auto leading-relaxed">
-               Our classrooms are beautiful, prepared environments where children learn at their own pace, following their natural curiosity.
+               Our prepared environments are best understood in person, with a guide who can answer your family&apos;s questions.
             </p>
             <div className="relative z-10 mt-10">
-               <button className="rounded-full bg-yellow px-8 py-4 text-lg font-extrabold text-navy shadow-xl shadow-yellow/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow/40 active:scale-95">
-                  View Our Classrooms
-               </button>
+               <Link
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-yellow px-8 py-4 text-lg font-extrabold text-navy shadow-xl shadow-yellow/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow/40 active:scale-95"
+               >
+                  Book a Classroom Visit
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+               </Link>
             </div>
          </div>
       </section>

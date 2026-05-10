@@ -20,6 +20,8 @@ const campuses = [
 
 const mapsUrl =
   "https://www.google.com/maps/dir/?api=1&destination=Pink%20Tower%20International%20School%2C%2041%2C%20Nairobi%2C%2000100%2C%20KE";
+const mapEmbedUrl =
+  "https://www.google.com/maps?q=Pink%20Tower%20International%20School%2C%20Nairobi&output=embed";
 
 const fields = [
   { name: "name", label: "Your name", type: "text" },
@@ -216,6 +218,30 @@ export default function ContactPage() {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 pb-20 md:px-12 md:pb-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8 max-w-3xl">
+            <p className="mb-4 text-sm font-extrabold uppercase tracking-widest text-purple">Find Us</p>
+            <h2 className="font-heading text-3xl font-extrabold tracking-tight text-navy md:text-5xl">
+              A live map for your visit.
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-slate-600">
+              Open the map before you leave, then message us if you would like a team member to guide you to the right gate.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-[2.5rem] border-8 border-yellow bg-white shadow-2xl shadow-indigo-900/10">
+            <iframe
+              title="Pink Tower International School map"
+              src={mapEmbedUrl}
+              className="h-[420px] w-full border-0 md:h-[520px]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>

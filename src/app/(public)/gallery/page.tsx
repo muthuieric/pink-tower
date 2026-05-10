@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import prisma from "@/lib/prisma";
-import { Images, Sparkles } from "lucide-react";
+import { ArrowRight, Images, Sparkles } from "lucide-react";
+import Link from 'next/link';
 
 export const dynamic = "force-dynamic";
 
@@ -123,20 +124,26 @@ export default async function Gallery() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="px-6 pb-20 md:px-12 md:pb-24">
-         <div className="mx-auto max-w-4xl rounded-3xl bg-yellow px-8 py-16 md:px-16 md:py-20 text-center shadow-2xl shadow-yellow/20 relative overflow-hidden">
-            <div className="absolute top-0 left-0 h-64 w-64 bg-white/40 blur-3xl opacity-50 -translate-y-1/2 -translate-x-1/2 rounded-full" />
+     
+        {/* CTA Section */}
+        <section className="px-6 pb-20 md:px-12 md:pb-24">
+         <div className="mx-auto max-w-5xl rounded-3xl bg-gradient-to-br from-yellow to-amber-400 px-8 py-16 md:px-16 md:py-20 text-center shadow-2xl shadow-yellow/20 relative overflow-hidden transform rotate-1 transition-transform duration-500 hover:rotate-0">
+            <div className="absolute top-0 right-0 h-64 w-64 bg-white/40 blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2 rounded-full" />
+            
             <h2 className="relative z-10 text-3xl md:text-5xl font-heading font-extrabold tracking-tight text-navy">
-               Experience it in person
+            Experience it in person
             </h2>
             <p className="relative z-10 mt-6 text-lg md:text-xl text-navy/80 max-w-2xl mx-auto leading-relaxed font-medium">
-               Pictures can only tell half the story. Come and feel the warmth of our community.
+            Pictures can only tell half the story. Come and feel the warmth of our community.
             </p>
             <div className="relative z-10 mt-10">
-               <button className="rounded-full bg-navy px-8 py-4 text-lg font-extrabold text-white shadow-xl shadow-navy/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-navy/40 active:scale-95">
+               <Link
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-navy px-8 py-4 text-lg font-extrabold text-white shadow-xl shadow-navy/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-navy/40 active:scale-95"
+               >
                   Schedule a Visit
-               </button>
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+               </Link>
             </div>
          </div>
       </section>

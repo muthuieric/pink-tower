@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { Activity, BookOpen, Globe2, HeartHandshake, Languages, Sparkles, Users } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, Activity, BookOpen, Globe2, HeartHandshake, Languages, Sparkles, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About - Pink Tower International School',
@@ -181,7 +182,6 @@ export default function About() {
         </div>
       </section>
       
-      CTA Section
       <section className="px-6 pb-20 md:px-12 md:pb-24">
          <div className="mx-auto max-w-5xl rounded-3xl bg-navy px-8 py-16 md:px-16 md:py-20 text-center shadow-2xl shadow-indigo-900/20 relative overflow-hidden">
             <div className="absolute top-0 right-0 h-64 w-64 bg-purple blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2 rounded-full" />
@@ -191,10 +191,15 @@ export default function About() {
             <p className="relative z-10 mt-6 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
                Join our community of joyful learners and see the world through their eyes.
             </p>
+      
             <div className="relative z-10 mt-10">
-               <button className="rounded-full bg-yellow px-8 py-4 text-lg font-extrabold text-navy shadow-xl shadow-yellow/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow/40 active:scale-95">
+               <Link
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-yellow px-8 py-4 text-lg font-extrabold text-navy shadow-xl shadow-yellow/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-yellow/40 active:scale-95"
+               >
                   Book a Campus Tour
-               </button>
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+               </Link>
             </div>
          </div>
       </section>
