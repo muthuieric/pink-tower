@@ -1,6 +1,6 @@
 "use client";
 
-import { Clock, Mail, MapPin, MessageCircle, Phone, Sparkles } from "lucide-react";
+import { Clock, Mail, MapPin, MessageCircle, Phone, Sparkles, Send } from "lucide-react";
 import { useState } from "react";
 
 const campuses = [
@@ -61,141 +61,162 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="bg-white">
-      <section className="relative overflow-hidden bg-gradient-to-br from-purple/10 via-white to-yellow/35 px-6 py-20 md:px-12 md:py-28">
-        <div className="absolute -right-16 top-10 h-48 w-48 rounded-full border-[26px] border-purple/10" />
-        <div className="absolute -bottom-20 left-8 h-56 w-56 rounded-full bg-yellow/25" />
-        <div className="relative mx-auto max-w-5xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-purple/20 bg-white/80 px-4 py-2 text-sm font-bold uppercase tracking-wide text-purple">
-            <Sparkles className="h-4 w-4" />
-            Contact
+    <div className="bg-[#FAFAFA] font-sans pb-10 overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-white to-purple/5 px-6 py-16 md:px-12 md:py-32">
+        {/* Playful Background Elements */}
+        <div className="absolute left-1/2 top-8 h-64 w-64 -translate-x-1/2 rounded-full border-[32px] border-yellow/20 md:left-auto md:right-16 md:top-14" />
+        <div className="absolute bottom-10 left-10 h-72 w-72 rounded-full bg-purple/5 blur-3xl" />
+        
+        <div className="relative mx-auto max-w-5xl text-center md:text-left flex flex-col items-center md:items-start">
+          <span className="inline-flex items-center gap-2 rounded-full border-2 border-purple/10 bg-white px-5 py-2.5 text-sm font-extrabold uppercase tracking-widest text-purple shadow-sm">
+            <Sparkles className="h-4 w-4 text-yellow" />
+            Contact Us
           </span>
-          <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-tight text-navy md:text-6xl">
-            Come visit us in Lavington.
+          <h1 className="mt-8 max-w-4xl font-heading text-4xl font-extrabold tracking-tight text-navy md:text-6xl lg:text-7xl">
+            Come visit us in <br className="hidden md:block" />
+            <span className="text-purple">Lavington.</span>
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-700">
-            Two beautiful campuses, one warm community. We can&apos;t wait to meet you.
+          <p className="mt-8 max-w-3xl text-lg md:text-xl leading-relaxed text-slate-600">
+            Two beautiful campuses, one warm community. We can&apos;t wait to meet you and your family.
           </p>
         </div>
       </section>
 
-      <section className="px-6 py-16 md:px-12">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+      {/* Main Content */}
+      <section className="px-6 py-16 md:px-12 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+          
+          {/* Left Column - Contact Info */}
           <div>
-            <p className="text-sm font-bold uppercase tracking-wide text-purple">Plan Your Visit</p>
-            <h2 className="mt-3 text-3xl font-bold text-navy md:text-4xl">
-              Choose the campus closest to your family.
+            <p className="text-sm font-extrabold uppercase tracking-widest text-purple mb-4">Plan Your Visit</p>
+            <h2 className="text-3xl font-heading font-extrabold tracking-tight text-navy md:text-5xl">
+              Choose the campus closest to you.
             </h2>
-            <p className="mt-5 text-lg leading-8 text-gray-700">
-              Our team will help you find the right starting point, answer admissions questions, and arrange a calm,
-              welcoming tour.
+            <p className="mt-6 text-lg leading-relaxed text-slate-600">
+              Our team will help you find the right starting point, answer admissions questions, and arrange a calm, welcoming tour.
             </p>
 
             <a
               href={mapsUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 flex items-start gap-4 rounded-lg border border-purple/10 bg-purple/5 p-5 shadow-sm transition hover:border-purple/40 hover:shadow-md"
+              className="group mt-10 flex items-center gap-6 rounded-3xl border-2 border-transparent bg-purple/5 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-purple/20 hover:shadow-xl hover:shadow-purple/10"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-yellow text-navy">
-                <MapPin className="h-6 w-6" />
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white text-purple shadow-md transition-transform group-hover:scale-110 group-hover:rotate-3">
+                <MapPin className="h-8 w-8" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-navy">Open in Google Maps</h3>
-                <p className="mt-1 text-sm leading-6 text-gray-600">
-                  Pink Tower International School, 41, Nairobi, 00100, KE
+                <h3 className="text-xl font-extrabold text-navy group-hover:text-purple transition-colors">Open in Google Maps</h3>
+                <p className="mt-1 text-base font-medium text-slate-600">
+                  Pink Tower International School, 41, Nairobi
                 </p>
               </div>
             </a>
 
-            <div className="mt-8 grid gap-4">
+            <div className="mt-10 grid gap-8">
               {campuses.map((campus) => (
                 <article
                   key={campus.name}
-                  className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition hover:border-purple/40 hover:shadow-md"
+                  className="group rounded-3xl bg-white p-8 shadow-xl shadow-indigo-900/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-900/10 border-2 border-transparent hover:border-yellow/30"
                 >
-                  <div className="flex gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-yellow text-navy">
-                      <MapPin className="h-6 w-6" />
+                  <div className="flex items-start gap-5">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow/30 to-yellow/10 text-amber-600 shadow-inner group-hover:scale-110 transition-transform">
+                      <MapPin className="h-7 w-7" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-navy">{campus.name}</h3>
-                      <p className="mt-2 text-sm leading-6 text-gray-600">{campus.addr}</p>
+                      <h3 className="text-2xl font-heading font-extrabold text-navy">{campus.name}</h3>
+                      <p className="mt-2 text-base font-medium text-slate-600">{campus.addr}</p>
                     </div>
                   </div>
-                  <div className="mt-5 grid gap-3 text-sm font-medium text-gray-700 sm:grid-cols-2">
-                    <a href={`tel:${campus.phone.replace(/\s/g, "")}`} className="flex items-center gap-2 hover:text-purple">
-                      <Phone className="h-4 w-4 text-purple" />
+                  <div className="mt-8 grid gap-4 text-base font-medium text-slate-700 sm:grid-cols-2">
+                    <a href={`tel:${campus.phone.replace(/\s/g, "")}`} className="flex items-center gap-3 transition-colors hover:text-purple">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple/10">
+                        <Phone className="h-4 w-4 text-purple" />
+                      </div>
                       {campus.phone}
                     </a>
-                    <a href={`mailto:${campus.email}`} className="flex items-center gap-2 hover:text-purple">
-                      <Mail className="h-4 w-4 text-purple" />
+                    <a href={`mailto:${campus.email}`} className="flex items-center gap-3 transition-colors hover:text-purple">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
+                        <Mail className="h-4 w-4 text-blue-600" />
+                      </div>
                       {campus.email}
                     </a>
-                    <p className="flex items-center gap-2 sm:col-span-2">
-                      <Clock className="h-4 w-4 text-purple" />
+                    <div className="flex items-center gap-3 sm:col-span-2 text-slate-600">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 shrink-0">
+                        <Clock className="h-4 w-4 text-emerald-600" />
+                      </div>
                       Mon - Fri · 7:30 AM - 5:00 PM
-                    </p>
+                    </div>
                   </div>
                 </article>
               ))}
             </div>
           </div>
 
-          <form onSubmit={onSubmit} className="rounded-lg border border-purple/10 bg-purple/5 p-6 shadow-sm md:p-8">
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-yellow text-navy">
-                <MessageCircle className="h-6 w-6" />
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold text-navy">Send us a message</h2>
-                <p className="text-gray-600">We typically respond within one school day.</p>
-              </div>
-            </div>
-
-            <div className="mt-6 grid gap-4">
-              {fields.map((field) => (
-                <div key={field.name}>
-                  <label htmlFor={field.name} className="mb-1 block text-sm font-bold text-navy">
-                    {field.label}
-                  </label>
-                  <input
-                    id={field.name}
-                    name={field.name}
-                    type={field.type}
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 font-medium text-navy outline-none transition focus:border-purple focus:ring-2 focus:ring-purple/15"
-                  />
-                  {errors[field.name] && <p className="mt-1 text-xs font-bold text-destructive">{errors[field.name]}</p>}
+          {/* Right Column - Contact Form */}
+          <div className="relative mt-12 lg:mt-0">
+            {/* Decorative background blob */}
+            <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-br from-purple/10 to-yellow/10 blur-2xl -z-10" />
+            
+            <form onSubmit={onSubmit} className="rounded-[2.5rem] border-8 border-white bg-[#FAFAFA] p-8 md:p-12 shadow-2xl shadow-indigo-900/10">
+              <div className="mb-10 flex items-center gap-5">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-navy text-yellow shadow-inner">
+                  <MessageCircle className="h-8 w-8" />
                 </div>
-              ))}
-
-              <div>
-                <label htmlFor="message" className="mb-1 block text-sm font-bold text-navy">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 font-medium text-navy outline-none transition focus:border-purple focus:ring-2 focus:ring-purple/15"
-                />
-                {errors.message && <p className="mt-1 text-xs font-bold text-destructive">{errors.message}</p>}
+                <div>
+                  <h2 className="text-3xl font-heading font-extrabold text-navy">Send a message</h2>
+                  <p className="mt-1 text-lg font-medium text-slate-500">We typically respond within a day.</p>
+                </div>
               </div>
 
-              {status && (
-                <p className="rounded-lg bg-white px-4 py-3 text-sm font-bold text-navy shadow-sm" role="status">
-                  {status}
-                </p>
-              )}
+              <div className="grid gap-6">
+                {fields.map((field) => (
+                  <div key={field.name}>
+                    <label htmlFor={field.name} className="mb-2 block text-sm font-extrabold uppercase tracking-widest text-navy">
+                      {field.label}
+                    </label>
+                    <input
+                      id={field.name}
+                      name={field.name}
+                      type={field.type}
+                      className="w-full rounded-2xl border-2 border-transparent bg-white px-5 py-4 text-lg font-medium text-navy placeholder:text-slate-400 shadow-sm outline-none transition-all focus:border-purple/30 focus:ring-4 focus:ring-purple/10"
+                      placeholder={`Enter your ${field.name}`}
+                    />
+                    {errors[field.name] && <p className="mt-2 text-sm font-bold text-rose-500">{errors[field.name]}</p>}
+                  </div>
+                ))}
 
-              <button
-                type="submit"
-                className="w-full rounded-lg bg-navy px-6 py-3 text-base font-bold text-white transition hover:bg-purple"
-              >
-                Send Message
-              </button>
-            </div>
-          </form>
+                <div>
+                  <label htmlFor="message" className="mb-2 block text-sm font-extrabold uppercase tracking-widest text-navy">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    className="w-full rounded-2xl border-2 border-transparent bg-white px-5 py-4 text-lg font-medium text-navy placeholder:text-slate-400 shadow-sm outline-none transition-all focus:border-purple/30 focus:ring-4 focus:ring-purple/10 resize-none"
+                    placeholder="How can we help you?"
+                  />
+                  {errors.message && <p className="mt-2 text-sm font-bold text-rose-500">{errors.message}</p>}
+                </div>
+
+                {status && (
+                  <div className="rounded-2xl border-2 border-emerald-100 bg-emerald-50 px-6 py-4 text-center shadow-sm" role="status">
+                    <p className="text-lg font-bold text-emerald-700">{status}</p>
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  className="group mt-4 flex w-full items-center justify-center gap-3 rounded-full bg-navy px-8 py-5 text-lg font-extrabold text-white shadow-xl shadow-navy/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-navy/40 active:scale-95"
+                >
+                  Send Message
+                  <Send className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
     </div>

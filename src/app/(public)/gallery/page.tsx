@@ -56,58 +56,89 @@ export default async function Gallery() {
         ];
 
   return (
-    <div className="bg-white">
-      <section className="relative overflow-hidden bg-gradient-to-br from-purple/10 via-white to-yellow/35 px-6 py-20 md:px-12 md:py-28">
-        <div className="absolute -right-16 top-10 h-48 w-48 rounded-full border-[26px] border-purple/10" />
-        <div className="absolute -bottom-20 left-8 h-56 w-56 rounded-full bg-yellow/25" />
-        <div className="relative mx-auto max-w-5xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-purple/20 bg-white/80 px-4 py-2 text-sm font-bold uppercase tracking-wide text-purple">
-            <Sparkles className="h-4 w-4" />
-            Gallery
+    <div className="bg-[#FAFAFA] font-sans pb-10 overflow-x-hidden">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-cream via-white to-purple/5 px-6 py-16 md:px-12 md:py-32">
+        {/* Playful Background Elements */}
+        <div className="absolute -right-16 top-10 h-64 w-64 rounded-full border-[32px] border-yellow/20" />
+        <div className="absolute -bottom-20 left-8 h-72 w-72 rounded-full bg-purple/5 blur-3xl" />
+        
+        <div className="relative mx-auto max-w-5xl text-center md:text-left flex flex-col items-center md:items-start">
+          <span className="inline-flex items-center gap-2 rounded-full border-2 border-purple/10 bg-white px-5 py-2.5 text-sm font-extrabold uppercase tracking-widest text-purple shadow-sm">
+            <Sparkles className="h-4 w-4 text-yellow" />
+            Our Gallery
           </span>
-          <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-tight text-navy md:text-6xl">
-            A window into everyday wonder.
+          <h1 className="mt-8 max-w-4xl font-heading text-4xl font-extrabold tracking-tight text-navy md:text-6xl lg:text-7xl">
+            A window into <br className="hidden md:block" />
+            <span className="text-purple">everyday wonder.</span>
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-700">
+          <p className="mt-8 max-w-3xl text-lg md:text-xl leading-relaxed text-slate-600">
             Take a glimpse into the daily life, activities, and special moments at Pink Tower International School.
           </p>
         </div>
       </section>
 
-      <section className="px-6 py-16 md:px-12">
+      {/* Gallery Grid */}
+      <section className="px-6 py-16 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between text-center md:text-left">
             <div>
-              <p className="text-sm font-bold uppercase tracking-wide text-purple">Life at Pink Tower</p>
-              <h2 className="mt-3 text-3xl font-bold text-navy md:text-4xl">Learning, play, art, and community.</h2>
+              <p className="text-sm font-extrabold uppercase tracking-widest text-purple mb-4">Life at Pink Tower</p>
+              <h2 className="text-3xl font-heading font-extrabold tracking-tight text-navy md:text-5xl">
+                Learning, play, art, <br className="hidden md:block" /> and community.
+              </h2>
             </div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-yellow text-navy">
-              <Images className="h-6 w-6" />
+            <div className="hidden md:flex h-20 w-20 items-center justify-center rounded-3xl bg-yellow/20 text-yellow shadow-inner">
+              <Images className="h-10 w-10 text-yellow" />
             </div>
           </div>
 
-          <div className="columns-1 gap-6 space-y-6 md:columns-2 lg:columns-3">
-            {displayImages.map((img) => (
-              <div
-                key={img.id}
-                className="group relative break-inside-avoid overflow-hidden rounded-lg border border-gray-200 bg-gray-100 shadow-sm transition hover:border-purple/40 hover:shadow-md"
-              >
-                {/* Using standard img tag for external URLs without needing to configure remotePatterns in next.config */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={img.url}
-                  alt={img.caption || "Gallery Image"}
-                  className="h-auto w-full object-cover transition duration-500 group-hover:scale-105"
-                />
-                {img.caption && (
-                  <div className="absolute bottom-0 left-0 right-0 translate-y-full bg-gradient-to-t from-navy/90 to-transparent p-4 transition-transform duration-300 group-hover:translate-y-0">
-                    <p className="text-sm font-bold text-white">{img.caption}</p>
-                  </div>
-                )}
-              </div>
-            ))}
+          <div className="columns-1 gap-8 space-y-8 sm:columns-2 lg:columns-3">
+            {displayImages.map((img, index) => {
+              // Create alternating rotations for the playful scrapbook feel
+              const rotationClass = index % 3 === 0 ? '-rotate-2' : index % 2 === 0 ? 'rotate-2' : '-rotate-1';
+              const borderClass = index % 2 === 0 ? 'border-yellow/50' : 'border-purple/30';
+
+              return (
+                <div
+                  key={img.id}
+                  className={`group relative break-inside-avoid overflow-hidden rounded-3xl border-8 ${borderClass} bg-white shadow-xl shadow-indigo-900/10 transition-all duration-500 hover:-translate-y-2 hover:rotate-0 hover:shadow-2xl hover:shadow-indigo-900/20 transform ${rotationClass}`}
+                >
+                  {/* Using standard img tag for external URLs without needing to configure remotePatterns in next.config */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={img.url}
+                    alt={img.caption || "Gallery Image"}
+                    className="h-auto w-full object-cover transition duration-700 group-hover:scale-110"
+                  />
+                  {img.caption && (
+                    <div className="absolute bottom-0 left-0 right-0 translate-y-full bg-gradient-to-t from-navy/90 via-navy/60 to-transparent p-6 pt-12 transition-transform duration-300 group-hover:translate-y-0">
+                      <p className="text-lg font-extrabold text-white">{img.caption}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="px-6 pb-20 md:px-12 md:pb-24">
+         <div className="mx-auto max-w-4xl rounded-3xl bg-yellow px-8 py-16 md:px-16 md:py-20 text-center shadow-2xl shadow-yellow/20 relative overflow-hidden">
+            <div className="absolute top-0 left-0 h-64 w-64 bg-white/40 blur-3xl opacity-50 -translate-y-1/2 -translate-x-1/2 rounded-full" />
+            <h2 className="relative z-10 text-3xl md:text-5xl font-heading font-extrabold tracking-tight text-navy">
+               Experience it in person
+            </h2>
+            <p className="relative z-10 mt-6 text-lg md:text-xl text-navy/80 max-w-2xl mx-auto leading-relaxed font-medium">
+               Pictures can only tell half the story. Come and feel the warmth of our community.
+            </p>
+            <div className="relative z-10 mt-10">
+               <button className="rounded-full bg-navy px-8 py-4 text-lg font-extrabold text-white shadow-xl shadow-navy/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-navy/40 active:scale-95">
+                  Schedule a Visit
+               </button>
+            </div>
+         </div>
       </section>
     </div>
   );
