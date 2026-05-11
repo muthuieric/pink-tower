@@ -23,7 +23,7 @@ export function Footer() {
               Meet the school in person.
             </h2>
             <p className="mt-3 max-w-2xl text-lg leading-relaxed text-white/75">
-              Ask admissions questions, compare campuses, and plan a warm first visit for your child.
+              Ask admissions questions, and plan a warm first visit for your child.
             </p>
           </div>
           <a
@@ -75,19 +75,11 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-white/85">
             <li className="flex gap-2">
               <MapPin className="mt-0.5 size-4 shrink-0" />
-              <span>Mzima Springs Road, Lavington</span>
+              <span>41, Kabaserian, Lavington, Nairobi</span>
             </li>
             <li className="flex gap-2">
               <Phone className="mt-0.5 size-4 shrink-0" />
-              <span>+254 700 000 001</span>
-            </li>
-            <li className="mt-4 flex gap-2">
-              <MapPin className="mt-0.5 size-4 shrink-0" />
-              <span>Convent Road, Lavington</span>
-            </li>
-            <li className="flex gap-2">
-              <Phone className="mt-0.5 size-4 shrink-0" />
-              <span>+254 700 000 002</span>
+              <span>+254 707 480825</span>
             </li>
           </ul>
         </div>
@@ -97,7 +89,7 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-white/85">
             <li className="flex gap-2">
               <Mail className="mt-0.5 size-4 shrink-0" />
-              <span>hello@pinktower.ac.ke</span>
+              <span>info@pinktowerinternational.com</span>
             </li>
             <li className="flex gap-2">
               <Camera className="mt-0.5 size-4 shrink-0" />
