@@ -23,7 +23,7 @@ export function Footer() {
               Meet the school in person.
             </h2>
             <p className="mt-3 max-w-2xl text-lg leading-relaxed text-white/75">
-              Ask admissions questions, and plan a warm first visit for your child.
+              Ask admissions questions or plan a warm first visit for your child.
             </p>
           </div>
           <a
