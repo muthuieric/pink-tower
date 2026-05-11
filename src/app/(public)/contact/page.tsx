@@ -5,16 +5,10 @@ import { useState } from "react";
 
 const campuses = [
   {
-    name: "Mzima Springs Campus",
-    addr: "Mzima Springs Road, Lavington, Nairobi",
-    phone: "+254 700 000 001",
-    email: "mzima@pinktower.ac.ke",
-  },
-  {
-    name: "Convent Road Campus",
-    addr: "Convent Road, Lavington, Nairobi",
-    phone: "+254 700 000 002",
-    email: "convent@pinktower.ac.ke",
+    name: "Pink Tower International",
+    addr: "41, Kabaserian, Lavington, Nairobi",
+    phone: "+254 707 480825",
+    email: "info@pinktowerinternational.com",
   },
 ];
 
@@ -80,7 +74,7 @@ export default function ContactPage() {
             <span className="text-purple">Lavington.</span>
           </h1>
           <p className="mt-8 max-w-3xl text-lg md:text-xl leading-relaxed text-slate-600">
-            Two beautiful campuses, one warm community. We can&apos;t wait to meet you and your family.
+            One warm community. We can&apos;t wait to meet you and your family.
           </p>
         </div>
       </section>
@@ -93,7 +87,7 @@ export default function ContactPage() {
           <div>
             <p className="text-sm font-extrabold uppercase tracking-widest text-purple mb-4">Plan Your Visit</p>
             <h2 className="text-3xl font-heading font-extrabold tracking-tight text-navy md:text-5xl">
-              Choose the campus closest to you.
+              
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-slate-600">
               Our team will help you find the right starting point, answer admissions questions, and arrange a calm, welcoming tour.
